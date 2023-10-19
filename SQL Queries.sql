@@ -24,5 +24,10 @@ select tag_name , count(*) as `Total occurences` from tags
 	group by tags.id
 	order by `Total occurences` desc limit 5; 
 
+/*What day of the week do most users register on? Provide insights on when to schedule an ad campaign*/
+
+select dayname(created_at) as day,count(*) as `Total registered users` from users
+	group by day
+	order by `Total registered users` desc; 
 
 
