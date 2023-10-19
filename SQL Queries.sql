@@ -17,3 +17,12 @@ select users.id ,users.username ,photos.image_url,count(*) as `Total Likes` from
  group by photos.id
  order by `Total Likes` desc limit 1; 
 
+/*Hashtag.Identify and suggest the top 5 most commonly used hashtags on the platform*/
+
+select tag_name , count(*) as `Total occurences` from tags
+	inner join photo_tags on tags.id = photo_tags.tag_id
+	group by tags.id
+	order by `Total occurences` desc limit 5; 
+
+
+
