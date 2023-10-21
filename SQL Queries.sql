@@ -30,4 +30,11 @@ select dayname(created_at) as day,count(*) as `Total registered users` from user
 	group by day
 	order by `Total registered users` desc; 
 
+Investor Metrics:
+
+/*User Engagement: Are users still as active and post on Instagram or they are making fewer posts.Find how many times does average user posts on Instagram.*/ 
+
+select (select count(*) from photos)/(select count(*) from users) as Avg_posts
+
+/* total number of photos on Instagram/total number of users*/
 
