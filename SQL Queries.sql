@@ -38,3 +38,9 @@ select (select count(*) from photos)/(select count(*) from users) as Avg_posts
 
 /* total number of photos on Instagram/total number of users*/
 
+
+/*Bots & Fake Accounts: Data on users (bots) who have liked every single photo on the site (since any normal user would not be able to do this)*/
+	select users.id,users.username,count(*) as `Total likes by user` from users
+	inner join likes on likes.user_id = users.id
+	group by likes.user_id
+	order by `Total likes by user` desc; 
